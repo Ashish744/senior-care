@@ -8,7 +8,7 @@
   const closeProfile = () => { pm.hidden = true; pb.setAttribute('aria-expanded', 'false'); };
   pb.addEventListener('click', () => { const open = pm.hidden; pm.hidden = !open; pb.setAttribute('aria-expanded', open); });
   document.addEventListener('click', (e) => { if (!e.target.closest('.prof')) closeProfile(); });
-  const setSide = (open) => { side.classList.toggle('open', open); dm.setAttribute('aria-expanded', open); dm.textContent = open ? 'Close' : 'Menu'; };
+  const setSide = (open) => { side.classList.toggle('open', open); dm.setAttribute('aria-expanded', open); dm.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); };
   dm.addEventListener('click', () => setSide(!side.classList.contains('open')));
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;

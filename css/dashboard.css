@@ -6,18 +6,21 @@
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
   padding: 0.4rem 1.2rem; background: var(--white); box-shadow: 0 2px 12px rgba(63, 98, 73, 0.1);
 }
-.dl { display: flex; align-items: center; gap: 0.8rem; }
+.dl { display: flex; align-items: center; }
 .dtop img { height: 48px; width: auto; object-fit: contain; }
+.dactions { display: flex; align-items: center; gap: 0.6rem; }
 .dmenu {
-  display: none; min-height: 44px; padding: 0 1rem; border: 2px solid var(--sage-d);
-  border-radius: 999px; background: none; font: 700 1rem Nunito, sans-serif; cursor: pointer;
+  display: none; width: 44px; height: 44px; padding: 0; border: 2px solid var(--sage-d);
+  border-radius: 50%; background: none; cursor: pointer; align-items: center; justify-content: center;
+  flex-direction: column; gap: 4px;
 }
+.dmenu span { display: block; width: 18px; height: 2px; border-radius: 2px; background: var(--sage-d); }
 .prof { position: relative; }
 .prof > button {
-  display: flex; align-items: center; gap: 0.6rem; min-height: 48px; padding: 0.2rem 1rem 0.2rem 0.3rem;
-  border: 2px solid var(--sage-l); border-radius: 999px; background: var(--white);
-  font: 700 1rem Nunito, sans-serif; cursor: pointer;
+  display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+  border: 2px solid var(--sage-l); border-radius: 50%; background: var(--white); cursor: pointer;
 }
+.profile-icon { width: 24px; height: 24px; fill: none; stroke: var(--sage-d); stroke-width: 1.8; stroke-linecap: round; }
 .av { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--peach); font-weight: 800; }
 .av.big { width: 72px; height: 72px; font-size: 1.5rem; margin-bottom: 0.6rem; }
 #pmenu { position: absolute; right: 0; top: 110%; min-width: 150px; background: var(--white); border-radius: 16px; box-shadow: var(--sh); padding: 0.4rem; }
@@ -82,7 +85,7 @@ svg.bars, svg.line { width: 100%; max-width: 560px; height: auto; display: block
 .faq details { margin-bottom: 0.5rem; }
 @media (max-width: 900px) {
   .dbody { grid-template-columns: minmax(0, 1fr); }
-  .dmenu { display: inline-flex; align-items: center; }
+  .dmenu { display: flex; }
   #side { position: fixed; left: 0; top: 64px; z-index: 55; width: 260px; transform: translateX(-100%); transition: transform 0.3s; }
   #side.open { transform: none; box-shadow: var(--sh); }
   .mail { grid-template-columns: 1fr; }

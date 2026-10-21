@@ -42,11 +42,11 @@
             <fieldset class="roles">
               <legend class="sr" style="font-weight: 700; margin-bottom: 0.4rem">Sign in as</legend>
               <label>
-                <input type="radio" name="role" data-go="public-dashboard.html" checked />
+                <input type="radio" name="role" value="public" data-go="public-dashboard.html" checked />
                 Public
               </label>
               <label>
-                <input type="radio" name="role" data-go="admin-dashboard.html" />
+                <input type="radio" name="role" value="admin" data-go="admin-dashboard.html" />
                 Admin
               </label>
             </fieldset>
@@ -80,20 +80,9 @@
             <button class="btn btn-primary" type="submit">Log in</button>
             <p class="form-ok" role="status" hidden></p>
           </form>
-          <button class="link-btn" id="forgot-btn" aria-expanded="false" aria-controls="forgot">
+          <a class="link-btn" href="404.html">
             Forgot password?
-          </button>
-          <div id="forgot" hidden>
-            <form data-validate data-ok="Demo only: no reset email was sent." novalidate>
-              <div class="field">
-                <label for="fem">Your email</label>
-                <input id="fem" type="email" required data-v="email" />
-                <p class="err" id="fem-err" role="alert"></p>
-              </div>
-              <button class="btn btn-ghost" type="submit">Send reset link</button>
-              <p class="form-ok" role="status" hidden></p>
-            </form>
-          </div>
+          </a>
           <p style="margin-top: 1rem">
             New here?
             <a href="create-account.html"><strong>Create an account</strong></a>

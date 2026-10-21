@@ -17,9 +17,23 @@
     <link rel="stylesheet" href="css/dashboard.css" />
   </head>
   <body class="dash admin">
-    <!-- Top bar: logo and profile only -->
+    <!-- Top bar: logo, profile, and mobile menu -->
     <header class="dtop">
       <div class="dl">
+        <a href="index.html">
+          <img src="assets/logo/logo.webp" alt="Senior Care Services, home" />
+        </a>
+      </div>
+      <div class="dactions">
+        <div class="prof">
+          <button id="pbtn" aria-label="Admin profile" aria-expanded="false" aria-controls="pmenu">
+            <svg class="profile-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="8" r="4"></circle>
+              <path d="M4 21a8 8 0 0 1 16 0"></path>
+            </svg>
+          </button>
+          <div id="pmenu" hidden><a href="login.html">Log out</a></div>
+        </div>
         <button
           class="dmenu"
           id="dm"
@@ -27,18 +41,8 @@
           aria-expanded="false"
           aria-controls="side"
         >
-          Menu
+          <span></span><span></span><span></span>
         </button>
-        <a href="index.html">
-          <img src="assets/logo/logo.webp" alt="Senior Care Services, home" />
-        </a>
-      </div>
-      <div class="prof">
-        <button id="pbtn" aria-expanded="false" aria-controls="pmenu">
-          <span class="av">AD</span>
-          Admin
-        </button>
-        <div id="pmenu" hidden><a href="login.html">Log out</a></div>
       </div>
     </header>
     <div class="dbody">

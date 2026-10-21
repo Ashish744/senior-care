@@ -28,7 +28,9 @@
           <h1 style="font-size: 2.4rem">Create your account</h1>
           <form
             data-validate
-            data-ok="Success! This is a frontend demo, so no real account was created."
+            data-ok="Your details are valid. Redirecting to login..."
+            data-redirect="login.html"
+            data-role-redirect
             novalidate
             style="margin-top: 1.5rem"
           >
@@ -44,6 +46,17 @@
                 <p class="err" id="ln-err" role="alert"></p>
               </div>
             </div>
+            <fieldset class="roles">
+              <legend style="font-weight: 700; margin-bottom: 0.4rem">Role Selector</legend>
+              <label>
+                <input type="radio" name="account-role" value="public" data-account-role checked />
+                Public
+              </label>
+              <label>
+                <input type="radio" name="account-role" value="admin" data-account-role />
+                Admin
+              </label>
+            </fieldset>
             <div class="field">
               <label for="em">Email</label>
               <input id="em" type="email" required data-v="email" autocomplete="email" />
