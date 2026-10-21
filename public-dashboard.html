@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Public dashboard | Senior Care Services</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;700;800&display=swap"
+    />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body class="dash public">
+    <!-- Top bar: logo and profile only -->
+    <header class="dtop">
+      <div class="dl">
+        <button
+          class="dmenu"
+          id="dm"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="side"
+        >
+          Menu
+        </button>
+        <a href="index.html">
+          <img src="assets/logo/logo.webp" alt="Senior Care Services, home" />
+        </a>
+      </div>
+      <div class="prof">
+        <button id="pbtn" aria-expanded="false" aria-controls="pmenu">
+          <span class="av">MH</span>
+          Margaret
+        </button>
+        <div id="pmenu" hidden><a href="login.html">Log out</a></div>
+      </div>
+    </header>
+    <div class="dbody">
+      <!-- Left menu -->
+      <aside id="side">
+        <nav aria-label="Dashboard menu">
+          <a href="#overview" data-view="overview">Overview</a>
+          <a href="#plan" data-view="plan">My care plan</a>
+          <a href="#visits" data-view="visits">Appointments</a>
+          <a href="#caregiver" data-view="caregiver">My caregiver</a>
+          <a href="#progress" data-view="progress">Progress</a>
+          <a href="#notes" data-view="notes">Notifications</a>
+          <a href="#help" data-view="help">Help and support</a>
+        </nav>
+        <p class="side-note">Demo data only</p>
+      </aside>
+      <!-- Page content: one view is shown at a time -->
+      <main>
+        <!-- ===== View: Overview ===== -->
+        <section class="view" id="v-overview">
+          <h2 tabindex="-1">Overview</h2>
+          <p class="lead">Welcome back, Margaret. Your next visit is tomorrow at 9:30 am.</p>
+          <div class="panel hero-card">
+            <span class="tag">Next visit</span>
+            <h3>Companionship with Anita Rao</h3>
+            <p>Tomorrow, 9:30 am. Anita will bring the crossword you both enjoy.</p>
+            <a class="btn btn-primary sm" href="#visits">See appointments</a>
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Visits this month</span>
+              <b>12</b>
+            </div>
+            <div class="stat">
+              <span>Goals completed</span>
+              <b>5 of 8</b>
+            </div>
+            <div class="stat">
+              <span>New notifications</span>
+              <b>3</b>
+            </div>
+          </div>
+          <div class="panel" style="margin-top: 1rem">
+            <h3>Today’s tip</h3>
+            <p>
+              A short walk after lunch helps digestion and sleep. Ask Anita to add one to your day.
+            </p>
+          </div>
+        </section>
+        <!-- ===== View: My care plan ===== -->
+        <section class="view" id="v-plan" hidden>
+          <h2 tabindex="-1">My care plan</h2>
+          <div class="panel pcheck">
+            <h3>My goals</h3>
+            <div
+              class="bar"
+              role="progressbar"
+              aria-label="Goals completed"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            >
+              <i data-p="0"></i>
+            </div>
+            <p class="cnt" aria-live="polite"></p>
+            <label class="gl">
+              <input type="checkbox" checked />
+              Walk for 15 minutes, 3 days a week
+            </label>
+            <label class="gl">
+              <input type="checkbox" checked />
+              Take morning medication on time
+            </label>
+            <label class="gl">
+              <input type="checkbox" checked />
+              Drink 6 glasses of water daily
+            </label>
+            <label class="gl">
+              <input type="checkbox" checked />
+              Join one social activity each week
+            </label>
+            <label class="gl">
+              <input type="checkbox" checked />
+              Do seated stretches every morning
+            </label>
+            <label class="gl">
+              <input type="checkbox" />
+              Keep the hallway lights on at night
+            </label>
+            <label class="gl">
+              <input type="checkbox" />
+              Call a friend or family member daily
+            </label>
+            <label class="gl">
+              <input type="checkbox" />
+              Review the care plan with the nurse
+            </label>
+          </div>
+          <h3 style="margin: 1.5rem 0 0.6rem">My week</h3>
+          <div class="panel tbl">
+            <table id="week">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Morning</th>
+                  <th>Afternoon</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Mon</b></td>
+                  <td>9:30 Companionship</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td><b>Tue</b></td>
+                  <td>9:30 Morning routine</td>
+                  <td>4:00 Nurse check-in</td>
+                </tr>
+                <tr>
+                  <td><b>Wed</b></td>
+                  <td>9:30 Companionship</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td><b>Thu</b></td>
+                  <td>9:30 Morning routine</td>
+                  <td>Garden club</td>
+                </tr>
+                <tr>
+                  <td><b>Fri</b></td>
+                  <td>11:00 Nurse check-in</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td><b>Sat</b></td>
+                  <td>—</td>
+                  <td>Family visit</td>
+                </tr>
+                <tr>
+                  <td><b>Sun</b></td>
+                  <td>—</td>
+                  <td>Rest day</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- ===== View: Appointments ===== -->
+        <section class="view" id="v-visits" hidden>
+          <h2 tabindex="-1">Appointments</h2>
+          <div class="two">
+            <div class="panel">
+              <h3>Upcoming</h3>
+              <ul class="feed" id="upcoming">
+                <li>Tomorrow, 9:30 am: Companionship with Anita</li>
+                <li>Friday, 11:00 am: Nurse check-in with Sam</li>
+              </ul>
+              <h3 style="margin-top: 1.2rem">Past visits</h3>
+              <ul class="feed">
+                <li>Monday: Morning routine, completed</li>
+                <li>Last Friday: Companionship, completed</li>
+              </ul>
+            </div>
+            <form class="panel" id="req" novalidate>
+              <h3>Request an appointment</h3>
+              <div class="field">
+                <label for="svc">Service</label>
+                <select id="svc">
+                  <option>Companionship</option>
+                  <option>Personal care</option>
+                  <option>Memory support</option>
+                  <option>Meal preparation</option>
+                  <option>Mobility support</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="dt">Preferred date</label>
+                <input id="dt" type="date" />
+                <p class="err" id="dt-err" role="alert"></p>
+              </div>
+              <button class="btn btn-primary" type="submit">Send request</button>
+              <p class="form-ok" id="req-ok" role="status" hidden></p>
+            </form>
+          </div>
+        </section>
+        <!-- ===== View: My caregiver ===== -->
+        <section class="view" id="v-caregiver" hidden>
+          <h2 tabindex="-1">My caregiver</h2>
+          <div class="two">
+            <div class="panel profile">
+              <span class="av big">AR</span>
+              <h3>Anita Rao</h3>
+              <p><strong>Senior caregiver</strong></p>
+              <p>With you for 8 months. Loves gardening, crosswords and long walks.</p>
+              <ul class="feed">
+                <li>Languages: English, Hindi</li>
+                <li>Trained in memory care and mobility</li>
+                <li>Usually available Mon to Fri</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <h3>Rate Anita’s care</h3>
+              <div class="stars" role="group" aria-label="Rating">
+                <button type="button" aria-label="1 star" aria-pressed="false">★</button>
+                <button type="button" aria-label="2 stars" aria-pressed="false">★</button>
+                <button type="button" aria-label="3 stars" aria-pressed="false">★</button>
+                <button type="button" aria-label="4 stars" aria-pressed="false">★</button>
+                <button type="button" aria-label="5 stars" aria-pressed="false">★</button>
+              </div>
+              <p id="rate-out" role="status"></p>
+              <form id="note" novalidate>
+                <div class="field">
+                  <label for="nt">Send Anita a note</label>
+                  <textarea id="nt" rows="3"></textarea>
+                </div>
+                <button class="btn btn-primary sm" type="submit">Send note</button>
+                <p class="form-ok" id="nok" role="status" hidden>Note sent (demo).</p>
+              </form>
+            </div>
+          </div>
+        </section>
+        <!-- ===== View: Progress ===== -->
+        <section class="view" id="v-progress" hidden>
+          <h2 tabindex="-1">Progress</h2>
+          <div class="two">
+            <div class="panel">
+              <h3>My wellbeing score</h3>
+              <svg
+                class="line"
+                data-v="4,5,5,6,7,8"
+                viewBox="0 0 420 170"
+                role="img"
+                aria-label="Line chart of wellbeing score over six weeks"
+              ></svg>
+            </div>
+            <div class="panel">
+              <h3>Focus areas</h3>
+              <p>Mobility</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Mobility"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="70"></i>
+              </div>
+              <p>Medication routine</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Medication routine"
+                aria-valuenow="90"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="90"></i>
+              </div>
+              <p>Social activity</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Social activity"
+                aria-valuenow="55"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="55"></i>
+              </div>
+            </div>
+          </div>
+          <div class="panel" style="margin-top: 1rem">
+            <h3>Milestones</h3>
+            <ul class="feed">
+              <li>Walked to the park for the first time in months</li>
+              <li>Two weeks without a missed medication</li>
+              <li>Joined the Thursday garden club</li>
+            </ul>
+          </div>
+        </section>
+        <!-- ===== View: Notifications ===== -->
+        <section class="view" id="v-notes" hidden>
+          <h2 tabindex="-1">Notifications</h2>
+          <div class="panel">
+            <ul class="feed" id="notes">
+              <li class="unread">
+                Anita left a care note from today.
+                <button class="link-btn dismiss">Dismiss</button>
+              </li>
+              <li class="unread">
+                Your care plan was reviewed by a nurse.
+                <button class="link-btn dismiss">Dismiss</button>
+              </li>
+              <li class="unread">
+                Friday’s nurse check-in is confirmed.
+                <button class="link-btn dismiss">Dismiss</button>
+              </li>
+            </ul>
+            <button class="btn btn-ghost sm" id="readall">Mark all as read</button>
+          </div>
+        </section>
+        <!-- ===== View: Help and support ===== -->
+        <section class="view" id="v-help" hidden>
+          <h2 tabindex="-1">Help and support</h2>
+          <div class="two">
+            <div class="panel">
+              <h3>Contact us</h3>
+              <p>
+                <strong>Phone</strong>
+                <br />
+                +1 (555) 010-0199
+              </p>
+              <p>
+                <strong>Email</strong>
+                <br />
+                hello@seniorcare.example
+              </p>
+              <p>
+                <strong>Hours</strong>
+                <br />
+                Daily, 8am to 8pm
+              </p>
+              <div class="faq" style="margin-top: 1rem">
+                <details>
+                  <summary>Can I change a visit?</summary>
+                  <p>Yes. Request a new date and we will confirm by phone.</p>
+                </details>
+                <details>
+                  <summary>Who sees my care notes?</summary>
+                  <p>Only you, your nurse and family members you choose.</p>
+                </details>
+              </div>
+            </div>
+            <form
+              class="panel"
+              data-validate
+              data-ok="Thanks! We will call you back (demo only)."
+              novalidate
+            >
+              <h3>Request a callback</h3>
+              <div class="field">
+                <label for="cn">Your name</label>
+                <input id="cn" value="" data-v="name" data-label="Name" />
+                <p class="err" id="cn-err" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="ce">Email</label>
+                <input id="ce" value="" type="email" data-v="email" />
+                <p class="err" id="ce-err" role="alert"></p>
+              </div>
+              <button class="btn btn-primary" type="submit">Request callback</button>
+              <p class="form-ok" role="status" hidden></p>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!-- Scripts -->
+    <script src="js/validation.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

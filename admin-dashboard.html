@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin dashboard | Senior Care Services</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;700;800&display=swap"
+    />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body class="dash admin">
+    <!-- Top bar: logo and profile only -->
+    <header class="dtop">
+      <div class="dl">
+        <button
+          class="dmenu"
+          id="dm"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="side"
+        >
+          Menu
+        </button>
+        <a href="index.html">
+          <img src="assets/logo/logo.webp" alt="Senior Care Services, home" />
+        </a>
+      </div>
+      <div class="prof">
+        <button id="pbtn" aria-expanded="false" aria-controls="pmenu">
+          <span class="av">AD</span>
+          Admin
+        </button>
+        <div id="pmenu" hidden><a href="login.html">Log out</a></div>
+      </div>
+    </header>
+    <div class="dbody">
+      <!-- Left menu -->
+      <aside id="side">
+        <nav aria-label="Dashboard menu">
+          <a href="#overview" data-view="overview">Overview</a>
+          <a href="#services" data-view="services">Care Services</a>
+          <a href="#caregivers" data-view="caregivers">Caregivers</a>
+          <a href="#clients" data-view="clients">Clients</a>
+          <a href="#appointments" data-view="appointments">Appointments</a>
+          <a href="#messages" data-view="messages">Messages</a>
+          <a href="#reports" data-view="reports">Reports</a>
+          <a href="#settings" data-view="settings">Settings</a>
+        </nav>
+        <p class="side-note">Demo data only</p>
+      </aside>
+      <!-- Page content: one view is shown at a time -->
+      <main>
+        <!-- ===== View: Overview ===== -->
+        <section class="view" id="v-overview">
+          <h2 tabindex="-1">Overview</h2>
+          <p class="lead">Good morning, Admin. Here is how care is going today.</p>
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Active clients</span>
+              <b>128</b>
+              <small>6 new this week</small>
+            </div>
+            <div class="stat">
+              <span>Caregivers on shift</span>
+              <b>34</b>
+              <small>of 85 total</small>
+            </div>
+            <div class="stat">
+              <span>Appointments today</span>
+              <b>21</b>
+              <small>4 pending</small>
+            </div>
+            <div class="stat">
+              <span>Satisfaction</span>
+              <b>98%</b>
+              <small>last 30 days</small>
+            </div>
+          </div>
+          <div class="two">
+            <div class="panel">
+              <h3>Today’s schedule</h3>
+              <ul class="feed">
+                <li>
+                  <b>09:30</b>
+                  Margaret Hill with Anita Rao
+                </li>
+                <li>
+                  <b>10:15</b>
+                  George Fernandez with Sam Okoye
+                </li>
+                <li>
+                  <b>11:00</b>
+                  Lucy Tan with Priya Nair
+                </li>
+                <li>
+                  <b>13:30</b>
+                  Harold Brooks with Leo Martins
+                </li>
+                <li>
+                  <b>15:00</b>
+                  Evelyn Ward with Grace Lim
+                </li>
+              </ul>
+            </div>
+            <div class="panel">
+              <h3>Needs attention</h3>
+              <ul class="feed">
+                <li>2 appointments are still pending</li>
+                <li>Leo Martins is off today</li>
+                <li>3 messages are unread</li>
+                <li>1 care plan is due for review</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- ===== View: Care Services ===== -->
+        <section class="view" id="v-services" hidden>
+          <h2 tabindex="-1">Care Services</h2>
+          <div class="cards" id="svcs">
+            <div class="panel">
+              <h3>Companionship</h3>
+              <p>Conversation, walks and outings.</p>
+              <button class="btn btn-ghost sm sw" aria-pressed="true">Active</button>
+            </div>
+            <div class="panel">
+              <h3>Personal care</h3>
+              <p>Bathing, dressing and mobility help.</p>
+              <button class="btn btn-ghost sm sw" aria-pressed="true">Active</button>
+            </div>
+            <div class="panel">
+              <h3>Memory support</h3>
+              <p>Calm routines for dementia care.</p>
+              <button class="btn btn-ghost sm sw" aria-pressed="true">Active</button>
+            </div>
+            <div class="panel">
+              <h3>Meal preparation</h3>
+              <p>Nutritious meals made to taste.</p>
+              <button class="btn btn-ghost sm sw" aria-pressed="true">Active</button>
+            </div>
+          </div>
+          <form class="panel" id="addsvc" novalidate style="margin-top: 1rem">
+            <h3>Add a service</h3>
+            <div class="field">
+              <label for="sn">Service name</label>
+              <input id="sn" />
+              <p class="err" id="sn-err" role="alert"></p>
+            </div>
+            <button class="btn btn-primary sm" type="submit">Add service</button>
+          </form>
+        </section>
+        <!-- ===== View: Caregivers ===== -->
+        <section class="view" id="v-caregivers" hidden>
+          <h2 tabindex="-1">Caregivers</h2>
+          <div class="fchips" data-target=".cg" role="group" aria-label="Filter caregivers">
+            <button class="fbtn" data-f="all" aria-pressed="true">All</button>
+            <button class="fbtn" data-f="avail" aria-pressed="false">Available</button>
+            <button class="fbtn" data-f="shift" aria-pressed="false">On shift</button>
+            <button class="fbtn" data-f="off" aria-pressed="false">Off today</button>
+          </div>
+          <div class="cards">
+            <div class="panel cg" data-s="avail">
+              <span class="av">A</span>
+              <h3>Anita Rao</h3>
+              <p>Senior caregiver</p>
+              <span class="badge b-ok">Available</span>
+            </div>
+            <div class="panel cg" data-s="shift">
+              <span class="av">S</span>
+              <h3>Sam Okoye</h3>
+              <p>Nurse</p>
+              <span class="badge b-wait">On shift</span>
+            </div>
+            <div class="panel cg" data-s="avail">
+              <span class="av">P</span>
+              <h3>Priya Nair</h3>
+              <p>Memory specialist</p>
+              <span class="badge b-ok">Available</span>
+            </div>
+            <div class="panel cg" data-s="off">
+              <span class="av">L</span>
+              <h3>Leo Martins</h3>
+              <p>Companion</p>
+              <span class="badge b-x">Off today</span>
+            </div>
+            <div class="panel cg" data-s="shift">
+              <span class="av">M</span>
+              <h3>Meera Shah</h3>
+              <p>Clinical lead</p>
+              <span class="badge b-wait">On shift</span>
+            </div>
+            <div class="panel cg" data-s="avail">
+              <span class="av">G</span>
+              <h3>Grace Lim</h3>
+              <p>Mobility coach</p>
+              <span class="badge b-ok">Available</span>
+            </div>
+          </div>
+        </section>
+        <!-- ===== View: Clients ===== -->
+        <section class="view" id="v-clients" hidden>
+          <h2 tabindex="-1">Clients</h2>
+          <div class="tools">
+            <label class="sr" for="cq">Search clients</label>
+            <input id="cq" type="search" data-search="clients" placeholder="Search clients" />
+          </div>
+          <div class="panel tbl">
+            <table id="clients">
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Age</th>
+                  <th>Plan</th>
+                  <th>Caregiver</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Margaret Hill</td>
+                  <td>82</td>
+                  <td>Daily support</td>
+                  <td>Anita Rao</td>
+                  <td><span class="badge b-ok">Active</span></td>
+                </tr>
+                <tr>
+                  <td>George Fernandez</td>
+                  <td>79</td>
+                  <td>Hourly care</td>
+                  <td>Sam Okoye</td>
+                  <td><span class="badge b-wait">Review</span></td>
+                </tr>
+                <tr>
+                  <td>Lucy Tan</td>
+                  <td>88</td>
+                  <td>Memory support</td>
+                  <td>Priya Nair</td>
+                  <td><span class="badge b-ok">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Harold Brooks</td>
+                  <td>91</td>
+                  <td>Live-in</td>
+                  <td>Leo Martins</td>
+                  <td><span class="badge b-ok">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Evelyn Ward</td>
+                  <td>84</td>
+                  <td>Hourly care</td>
+                  <td>Anita Rao</td>
+                  <td><span class="badge b-wait">Review</span></td>
+                </tr>
+                <tr>
+                  <td>Tom Baker</td>
+                  <td>77</td>
+                  <td>Daily support</td>
+                  <td>Grace Lim</td>
+                  <td><span class="badge b-ok">Active</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- ===== View: Appointments ===== -->
+        <section class="view" id="v-appointments" hidden>
+          <h2 tabindex="-1">Appointments</h2>
+          <div class="tools">
+            <label class="sr" for="aq">Search appointments</label>
+            <input
+              id="aq"
+              type="search"
+              data-search="appt"
+              placeholder="Search client or caregiver"
+            />
+            <label class="sr" for="af">Filter by status</label>
+            <select id="af" data-sel="appt">
+              <option value="">All statuses</option>
+              <option value="ok">Confirmed</option>
+              <option value="wait">Pending</option>
+              <option value="x">Cancelled</option>
+            </select>
+          </div>
+          <div class="panel tbl">
+            <table id="appt">
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Service</th>
+                  <th>Caregiver</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-s="ok">
+                  <td>Margaret Hill</td>
+                  <td>Companionship</td>
+                  <td>Anita Rao</td>
+                  <td>09:30</td>
+                  <td><span class="badge b-ok">Confirmed</span></td>
+                  <td><button class="btn btn-ghost sm tog">Change status</button></td>
+                </tr>
+                <tr data-s="wait">
+                  <td>George Fernandez</td>
+                  <td>Personal care</td>
+                  <td>Sam Okoye</td>
+                  <td>10:15</td>
+                  <td><span class="badge b-wait">Pending</span></td>
+                  <td><button class="btn btn-ghost sm tog">Change status</button></td>
+                </tr>
+                <tr data-s="ok">
+                  <td>Lucy Tan</td>
+                  <td>Memory support</td>
+                  <td>Priya Nair</td>
+                  <td>11:00</td>
+                  <td><span class="badge b-ok">Confirmed</span></td>
+                  <td><button class="btn btn-ghost sm tog">Change status</button></td>
+                </tr>
+                <tr data-s="x">
+                  <td>Harold Brooks</td>
+                  <td>Respite care</td>
+                  <td>Leo Martins</td>
+                  <td>13:30</td>
+                  <td><span class="badge b-x">Cancelled</span></td>
+                  <td><button class="btn btn-ghost sm tog">Change status</button></td>
+                </tr>
+                <tr data-s="wait">
+                  <td>Evelyn Ward</td>
+                  <td>Mobility support</td>
+                  <td>Grace Lim</td>
+                  <td>15:00</td>
+                  <td><span class="badge b-wait">Pending</span></td>
+                  <td><button class="btn btn-ghost sm tog">Change status</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- ===== View: Messages ===== -->
+        <section class="view" id="v-messages" hidden>
+          <h2 tabindex="-1">Messages</h2>
+          <div class="mail">
+            <ul class="inbox">
+              <li>
+                <button
+                  type="button"
+                  class="unread"
+                  data-from="Sarah W."
+                  data-body="Can we add Thursday visits for Mum? She enjoys the afternoon walks."
+                >
+                  <b>Sarah W.</b>
+                  <span>Can we add Thursday visits for Mum…</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="unread"
+                  data-from="Dr. Mehta"
+                  data-body="Updated care plan notes for George Fernandez are attached for review."
+                >
+                  <b>Dr. Mehta</b>
+                  <span>Updated care plan notes for George…</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class=""
+                  data-from="Tom B."
+                  data-body="Thank you to the whole team. Dad is much happier this month."
+                >
+                  <b>Tom B.</b>
+                  <span>Thank you to the whole team. Dad i…</span>
+                </button>
+              </li>
+            </ul>
+            <div class="panel" id="mview">
+              <p id="mhint">Select a message to read it.</p>
+              <div id="mopen" hidden>
+                <h3 id="mfrom"></h3>
+                <p id="mbody"></p>
+                <form id="reply" novalidate>
+                  <div class="field">
+                    <label for="rt">Reply</label>
+                    <textarea id="rt" rows="3"></textarea>
+                  </div>
+                  <button class="btn btn-primary sm" type="submit">Send reply</button>
+                  <p class="form-ok" id="rok" role="status" hidden>Reply sent (demo).</p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ===== View: Reports ===== -->
+        <section class="view" id="v-reports" hidden>
+          <h2 tabindex="-1">Reports</h2>
+          <div class="two">
+            <div class="panel">
+              <h3>Appointments this week</h3>
+              <svg
+                class="bars"
+                data-v="12,18,9,22,15,7,4"
+                data-l="Mon,Tue,Wed,Thu,Fri,Sat,Sun"
+                viewBox="0 0 430 185"
+                role="img"
+                aria-label="Bar chart of appointments per weekday"
+              ></svg>
+            </div>
+            <div class="panel">
+              <h3>Service mix</h3>
+              <p>Companionship (38%)</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Companionship"
+                aria-valuenow="38"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="38"></i>
+              </div>
+              <p>Personal care (27%)</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Personal care"
+                aria-valuenow="27"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="27"></i>
+              </div>
+              <p>Memory support (21%)</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Memory support"
+                aria-valuenow="21"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="21"></i>
+              </div>
+              <p>Meals (14%)</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Meals"
+                aria-valuenow="14"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="14"></i>
+              </div>
+              <button class="btn btn-primary sm" id="exp">Download appointments CSV</button>
+            </div>
+          </div>
+        </section>
+        <!-- ===== View: Settings ===== -->
+        <section class="view" id="v-settings" hidden>
+          <h2 tabindex="-1">Settings</h2>
+          <form class="panel" data-validate data-ok="Profile saved (demo only)." novalidate>
+            <div class="row2">
+              <div class="field">
+                <label for="fn">First name</label>
+                <input id="fn" value="Admin" data-v="name" data-label="First name" />
+                <p class="err" id="fn-err" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="ln">Last name</label>
+                <input id="ln" value="Team" data-v="name" data-label="Last name" />
+                <p class="err" id="ln-err" role="alert"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="em">Email</label>
+              <input id="em" value="admin@seniorcare.example" type="email" data-v="email" />
+              <p class="err" id="em-err" role="alert"></p>
+            </div>
+            <h3>Notifications</h3>
+            <p>
+              Email alerts
+              <button type="button" class="btn btn-ghost sm sw" aria-pressed="true">On</button>
+            </p>
+            <p>
+              Weekly report
+              <button type="button" class="btn btn-ghost sm sw" aria-pressed="false">Off</button>
+            </p>
+            <button class="btn btn-primary" type="submit">Save changes</button>
+            <p class="form-ok" role="status" hidden></p>
+          </form>
+        </section>
+      </main>
+    </div>
+    <!-- Scripts -->
+    <script src="js/validation.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

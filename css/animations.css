@@ -1,0 +1,139 @@
+.marquee {
+  overflow: hidden;
+  background: var(--sage-d);
+  color: var(--cream);
+  padding: 1rem 0;
+  font:
+    600 1.3rem Fraunces,
+    serif;
+}
+.marquee.light {
+  background: transparent;
+  color: var(--sage-d);
+  border-block: 2px solid var(--sage);
+}
+.marquee .track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: marq 32s linear infinite;
+}
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+.marquee span::after {
+  content: "❀";
+  margin-left: 3rem;
+  color: var(--peach);
+}
+@keyframes marq {
+  to {
+    transform: translateX(-50%);
+  }
+}
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: var(--cream);
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1.4rem;
+  text-align: center;
+  --u: clamp(46px, 14vw, 80px);
+}
+#loader img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+#loader p {
+  font:
+    600 1.5rem Fraunces,
+    serif;
+  color: var(--sage-d);
+}
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, var(--u));
+  grid-auto-rows: var(--u);
+  gap: 10px;
+}
+.tile {
+  border-radius: 20px;
+}
+.t1 {
+  grid-area: span 2 / span 2;
+  background: var(--sage);
+}
+.t2 {
+  background: var(--peach);
+}
+.t3 {
+  background: var(--teal);
+}
+.t4 {
+  grid-column: span 2;
+  background: var(--lav);
+}
+.t5 {
+  background: var(--coral);
+}
+.t6 {
+  grid-column: span 2;
+  background: var(--sage-l);
+}
+.t7 {
+  background: var(--peach);
+}
+.no-motion .marquee .track {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee .track {
+    animation: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
+@keyframes pulse {
+  from {
+    transform: scale(0.7);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ring {
+    animation: none;
+    opacity: 0.4;
+  }
+  .flip-in,
+  .mw {
+    transition: none;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bcard.pop,
+  .faq details[open] p {
+    animation: none;
+  }
+}

@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog | Senior Care Services</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;700;800&display=swap"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body>
+    <!-- Navbar: built by js/main.js -->
+    <header id="site-nav"></header>
+    <!-- Page content -->
+    <main class="wrap">
+      <!-- ===== Section: Advice for families, written with heart ===== -->
+      <section class="phero pv-blog">
+        <div class="ptxt">
+          <p class="eyebrow">Care guides</p>
+          <h1 data-split>Advice for families, written with heart</h1>
+          <p class="lead">Practical guides on caring, safety and wellbeing at home.</p>
+          <div class="btns"></div>
+        </div>
+        <div class="pvis">
+          <article class="card pcard3d">
+            <div class="ph">
+              <img
+                src="https://images.unsplash.com/photo-1758691031787-90867cb6fb2c?fm=webp&fit=crop&w=500&q=45"
+                alt="A smiling older couple at home on their sofa"
+                data-fallback="assets/images/blog-1.webp"
+              />
+            </div>
+            <span class="tag">Featured</span>
+            <h3>Talking with a parent about care</h3>
+            <p>5 minute read</p>
+          </article>
+          <div class="topics">
+            <span>Dementia</span>
+            <span>Safety</span>
+            <span>Nutrition</span>
+            <span>Family</span>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Section: Latest guides ===== -->
+      <section>
+        <h2 class="reveal">Latest guides</h2>
+        <div class="filters" role="group" aria-label="Filter articles">
+          <button class="fbtn" data-f="all" aria-pressed="true">All</button>
+          <button class="fbtn" data-f="Family" aria-pressed="false">Family</button>
+          <button class="fbtn" data-f="Safety" aria-pressed="false">Safety</button>
+          <button class="fbtn" data-f="Dementia" aria-pressed="false">Dementia</button>
+          <button class="fbtn" data-f="Nutrition" aria-pressed="false">Nutrition</button>
+          <button class="fbtn" data-f="Mobility" aria-pressed="false">Mobility</button>
+        </div>
+        <article class="card arow reveal" data-cat="Family">
+          <div class="ph">
+            <img
+              src="https://images.unsplash.com/photo-1758691031787-90867cb6fb2c?fm=webp&fit=crop&w=500&q=45"
+              alt="Talking with a parent about care"
+              loading="lazy"
+              data-fallback="assets/images/blog-1.webp"
+            />
+          </div>
+          <div>
+            <span class="tag">Family</span>
+            <h3>Talking with a parent about care</h3>
+            <p>Start early, listen more than you speak, and let them lead the plan.</p>
+            <button class="link-btn" data-more="m0" aria-expanded="false">Read the guide</button>
+            <p class="more" id="m0" hidden>
+              Pick a calm moment. Ask what matters most to them. Offer small trials, like one visit
+              a week, before bigger changes.
+            </p>
+          </div>
+        </article>
+        <article class="card arow reveal" data-cat="Safety">
+          <div class="ph">
+            <img
+              src="https://images.unsplash.com/photo-1721309688736-db2669a282f7?fm=webp&fit=crop&w=500&q=45"
+              alt="Making a home fall-safe"
+              loading="lazy"
+              data-fallback="assets/images/blog-2.webp"
+            />
+          </div>
+          <div>
+            <span class="tag">Safety</span>
+            <h3>Making a home fall-safe</h3>
+            <p>Small changes prevent most fall injuries.</p>
+            <button class="link-btn" data-more="m1" aria-expanded="false">Read the guide</button>
+            <p class="more" id="m1" hidden>
+              Improve lighting, remove loose rugs, add grab bars in the bathroom, and keep paths
+              clear at night.
+            </p>
+          </div>
+        </article>
+        <article class="card arow reveal" data-cat="Dementia">
+          <div class="ph">
+            <img
+              src="https://images.unsplash.com/photo-1454875392665-2ac2c85e8d3e?fm=webp&fit=crop&w=500&q=45"
+              alt="Daily routines for memory care"
+              loading="lazy"
+              data-fallback="assets/images/blog-3.webp"
+            />
+          </div>
+          <div>
+            <span class="tag">Dementia</span>
+            <h3>Daily routines for memory care</h3>
+            <p>Predictable days reduce stress for people with dementia.</p>
+            <button class="link-btn" data-more="m2" aria-expanded="false">Read the guide</button>
+            <p class="more" id="m2" hidden>
+              Keep meals, walks and rest at the same times. Use simple choices and familiar music.
+            </p>
+          </div>
+        </article>
+        <article class="card arow reveal" data-cat="Nutrition">
+          <div class="ph">
+            <img
+              src="https://images.unsplash.com/photo-1575467678930-c7acd65d6470?fm=webp&fit=crop&w=500&q=45"
+              alt="Easy, nourishing meals for seniors"
+              loading="lazy"
+              data-fallback="assets/images/service-meals.webp"
+            />
+          </div>
+          <div>
+            <span class="tag">Nutrition</span>
+            <h3>Easy, nourishing meals for seniors</h3>
+            <p>Simple ideas for appetite, hydration and healthy ageing.</p>
+            <button class="link-btn" data-more="m3" aria-expanded="false">Read the guide</button>
+            <p class="more" id="m3" hidden>
+              Choose soft, colourful foods, offer small meals often, and keep water within reach.
+            </p>
+          </div>
+        </article>
+        <article class="card arow reveal" data-cat="Mobility">
+          <div class="ph">
+            <img
+              src="https://images.unsplash.com/photo-1747302653826-42c6cd7295f2?fm=webp&fit=crop&w=500&q=45"
+              alt="Gentle exercises to stay mobile"
+              loading="lazy"
+              data-fallback="assets/images/service-mobility.webp"
+            />
+          </div>
+          <div>
+            <span class="tag">Mobility</span>
+            <h3>Gentle exercises to stay mobile</h3>
+            <p>Short daily routines that protect balance and strength.</p>
+            <button class="link-btn" data-more="m4" aria-expanded="false">Read the guide</button>
+            <p class="more" id="m4" hidden>
+              Try seated marches, ankle circles or tai chi, and always check with a nurse first.
+            </p>
+          </div>
+        </article>
+        <article class="card arow reveal" data-cat="Family">
+          <div class="ph">
+            <img
+              src="https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?fm=webp&fit=crop&w=500&q=45"
+              alt="Caring for the caregiver"
+              loading="lazy"
+              data-fallback="assets/images/service-respite.webp"
+            />
+          </div>
+          <div>
+            <span class="tag">Family</span>
+            <h3>Caring for the caregiver</h3>
+            <p>Why rest matters when you look after a parent.</p>
+            <button class="link-btn" data-more="m5" aria-expanded="false">Read the guide</button>
+            <p class="more" id="m5" hidden>
+              Share tasks, schedule breaks, and use respite care before exhaustion sets in.
+            </p>
+          </div>
+        </article>
+      </section>
+      <!-- ===== Section: Quick check: is the home safe? ===== -->
+      <section>
+        <h2 class="reveal">Quick check: is the home safe?</h2>
+        <div class="card check reveal">
+          <div
+            class="meter"
+            role="progressbar"
+            aria-label="Checklist progress"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+          >
+            <i></i>
+          </div>
+          <p class="cnt" aria-live="polite"></p>
+          <label>
+            <input type="checkbox" />
+            Night lights on the path to the bathroom
+          </label>
+          <label>
+            <input type="checkbox" />
+            No loose rugs or trailing cables
+          </label>
+          <label>
+            <input type="checkbox" />
+            Grab bars by the toilet and shower
+          </label>
+          <label>
+            <input type="checkbox" />
+            Chairs with firm arms, at a good height
+          </label>
+          <label>
+            <input type="checkbox" />
+            Medicines stored together and labelled
+          </label>
+          <label>
+            <input type="checkbox" />
+            Emergency numbers by the phone
+          </label>
+        </div>
+      </section>
+      <!-- ===== Section: Get care tips in your inbox ===== -->
+      <section>
+        <div class="news card reveal">
+          <div>
+            <h2>Get care tips in your inbox</h2>
+            <p>One short, kind email a month. No spam.</p>
+          </div>
+          <form
+            data-validate
+            data-ok="Thanks! This is a frontend demo, so nothing was sent."
+            novalidate
+          >
+            <div class="field">
+              <label for="nl">Email</label>
+              <input id="nl" type="email" required data-v="email" autocomplete="email" />
+              <p class="err" id="nl-err" role="alert"></p>
+            </div>
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+            <p class="form-ok" role="status" hidden></p>
+          </form>
+        </div>
+      </section>
+      <div class="marquee" aria-hidden="true">
+        <div class="track">
+          <span>Drink water often</span>
+          <span>Keep paths clear</span>
+          <span>Talk, then listen</span>
+          <span>Small walks every day</span>
+          <span>Rest is care too</span>
+        </div>
+      </div>
+    </main>
+    <!-- Footer: built by js/main.js -->
+    <footer id="site-foot"></footer>
+
+    <!-- Scripts: libraries first, then site code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/validation.js"></script>
+  </body>
+</html>

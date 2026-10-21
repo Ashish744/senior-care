@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create account | Senior Care Services</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;700;800&display=swap"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body>
+    <!-- Navbar: built by js/main.js -->
+    <header id="site-nav"></header>
+    <!-- Page content -->
+    <main class="wrap">
+      <!-- ===== Section: Create your account ===== -->
+      <section class="split">
+        <div class="card">
+          <h1 style="font-size: 2.4rem">Create your account</h1>
+          <form
+            data-validate
+            data-ok="Success! This is a frontend demo, so no real account was created."
+            novalidate
+            style="margin-top: 1.5rem"
+          >
+            <div class="row2">
+              <div class="field">
+                <label for="fn">First name</label>
+                <input id="fn" data-v="name" data-label="First name" autocomplete="given-name" />
+                <p class="err" id="fn-err" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="ln">Last name</label>
+                <input id="ln" data-v="name" data-label="Last name" autocomplete="family-name" />
+                <p class="err" id="ln-err" role="alert"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="em">Email</label>
+              <input id="em" type="email" required data-v="email" autocomplete="email" />
+              <p class="err" id="em-err" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="pw">Password (8+ characters)</label>
+              <div class="pw">
+                <input
+                  id="pw"
+                  type="password"
+                  required
+                  data-v="password"
+                  autocomplete="new-password"
+                />
+                <button
+                  type="button"
+                  class="pw-toggle"
+                  data-target="pw"
+                  aria-pressed="false"
+                  aria-label="Show password"
+                >
+                  Show
+                </button>
+              </div>
+              <p class="err" id="pw-err" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="cpw">Confirm password</label>
+              <div class="pw">
+                <input
+                  id="cpw"
+                  type="password"
+                  required
+                  data-v="confirm"
+                  autocomplete="new-password"
+                />
+                <button
+                  type="button"
+                  class="pw-toggle"
+                  data-target="cpw"
+                  aria-pressed="false"
+                  aria-label="Show password"
+                >
+                  Show
+                </button>
+              </div>
+              <p class="err" id="cpw-err" role="alert"></p>
+            </div>
+            <div class="field">
+              <label>
+                <input id="terms" type="checkbox" data-v="terms" />
+                I accept the terms and conditions
+              </label>
+              <p class="err" id="terms-err" role="alert"></p>
+            </div>
+            <button class="btn btn-primary" type="submit">Create account</button>
+            <p class="form-ok" role="status" hidden></p>
+          </form>
+          <p style="margin-top: 1rem">
+            Already registered?
+            <a href="login.html"><strong>Log in</strong></a>
+          </p>
+        </div>
+        <div class="ph parallax mask">
+          <img
+            src="assets/images/signup.webp"
+            alt="A nurse laughing with an elderly couple"
+            loading="lazy"
+          />
+        </div>
+      </section>
+    </main>
+    <!-- Scripts: libraries first, then site code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/validation.js"></script>
+  </body>
+</html>

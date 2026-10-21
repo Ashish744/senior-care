@@ -1,0 +1,89 @@
+/* ========== DASHBOARD SHELL (shared by admin and client dashboards) ========== */
+.dash { background: #f6f3ea; font-size: 1.05rem; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.dtop {
+  position: sticky; top: 0; z-index: 60; min-height: 64px;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.4rem 1.2rem; background: var(--white); box-shadow: 0 2px 12px rgba(63, 98, 73, 0.1);
+}
+.dl { display: flex; align-items: center; gap: 0.8rem; }
+.dtop img { height: 48px; width: auto; object-fit: contain; }
+.dmenu {
+  display: none; min-height: 44px; padding: 0 1rem; border: 2px solid var(--sage-d);
+  border-radius: 999px; background: none; font: 700 1rem Nunito, sans-serif; cursor: pointer;
+}
+.prof { position: relative; }
+.prof > button {
+  display: flex; align-items: center; gap: 0.6rem; min-height: 48px; padding: 0.2rem 1rem 0.2rem 0.3rem;
+  border: 2px solid var(--sage-l); border-radius: 999px; background: var(--white);
+  font: 700 1rem Nunito, sans-serif; cursor: pointer;
+}
+.av { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--peach); font-weight: 800; }
+.av.big { width: 72px; height: 72px; font-size: 1.5rem; margin-bottom: 0.6rem; }
+#pmenu { position: absolute; right: 0; top: 110%; min-width: 150px; background: var(--white); border-radius: 16px; box-shadow: var(--sh); padding: 0.4rem; }
+#pmenu a { display: block; padding: 0.7rem 1rem; text-decoration: none; font-weight: 700; border-radius: 12px; }
+#pmenu a:hover { background: var(--sage-l); }
+
+/* ========== LEFT MENU ========== */
+.dbody { display: grid; grid-template-columns: 240px minmax(0, 1fr); }
+#side {
+  position: sticky; top: 64px; align-self: start; height: calc(100vh - 64px); overflow: auto;
+  padding: 1.2rem; background: var(--white); border-right: 1px solid #e5eadc;
+}
+#side nav { display: grid; gap: 0.25rem; }
+#side a { display: block; padding: 0.75rem 1rem; border-radius: 14px; text-decoration: none; font-weight: 700; }
+#side a:hover, #side a.on { background: var(--sage-l); color: var(--sage-d); }
+.public #side a:hover, .public #side a.on { background: #fde3d6; color: #a5442f; }
+.side-note { margin-top: 1.5rem; font-size: 0.85rem; color: #7a867f; }
+
+/* ========== VIEWS ========== */
+.dash main { padding: 1.5rem clamp(1rem, 3vw, 2.5rem) 3rem; min-width: 0; max-width: 1100px; width: 100%; }
+.view { animation: fadeIn 0.35s; padding: 0; } /* cancels the site-wide section padding */
+.view[hidden] { display: none; }
+.view h2 { font-size: 1.9rem; margin-bottom: 1rem; }
+.view h2:focus { outline: none; }
+.dash h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.stat-grid, .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1rem; align-items: start; }
+.stat, .panel { background: var(--white); border-radius: 22px; padding: 1.2rem; box-shadow: var(--sh); min-width: 0; }
+.stat b { display: block; font: 600 2.3rem Fraunces, serif; color: var(--sage-d); }
+.public .stat b { color: #a5442f; }
+.hero-card { background: var(--peach); margin-bottom: 1rem; }
+.hero-card p { margin: 0.4rem 0 1rem; }
+.tbl { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 520px; }
+th, td { text-align: left; padding: 0.7rem 0.6rem; border-bottom: 1px solid #eef1e8; }
+.badge { display: inline-block; padding: 0.15rem 0.8rem; border-radius: 999px; font-size: 0.9rem; font-weight: 700; }
+.b-ok { background: #d9efdc; color: #2f6b3b; } .b-wait { background: #fdebc8; color: #8a5a00; } .b-x { background: #fbd9d3; color: #9a2f20; }
+.tools, .fchips { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1rem; }
+.tools input, .tools select, .dash .field input, .dash .field select, .dash .field textarea {
+  min-height: 48px; padding: 0.6rem 1rem; border: 2px solid #cfd9c9; border-radius: 14px; font: inherit; background: #fff; max-width: 100%;
+}
+.dash .field input, .dash .field select, .dash .field textarea { width: 100%; }
+.btn.sm { min-height: 44px; padding: 0.4rem 1rem; font-size: 0.95rem; }
+.feed { list-style: none; display: grid; gap: 0.7rem; }
+.feed li { padding-bottom: 0.7rem; border-bottom: 1px solid #eef1e8; }
+.feed li b { color: var(--teal); margin-right: 0.4rem; }
+.unread { font-weight: 800; }
+.bar { height: 12px; border-radius: 99px; background: #e6ece0; overflow: hidden; margin-bottom: 1rem; }
+.bar i { display: block; height: 100%; width: 0; background: var(--teal); border-radius: 99px; transition: width 1s; }
+.public .bar i { background: var(--coral); }
+svg.bars, svg.line { width: 100%; max-width: 560px; height: auto; display: block; }
+.mail { display: grid; grid-template-columns: minmax(220px, 1fr) 2fr; gap: 1rem; align-items: start; }
+.inbox { list-style: none; display: grid; gap: 0.5rem; }
+.inbox button { width: 100%; text-align: left; padding: 0.8rem 1rem; border: 2px solid transparent; border-radius: 16px; background: var(--white); font: inherit; cursor: pointer; display: grid; gap: 0.2rem; box-shadow: var(--sh); }
+.inbox button.sel { border-color: var(--teal); }
+.inbox span { font-size: 0.92rem; color: #5b6a62; font-weight: 400; }
+.stars { display: flex; gap: 0.3rem; margin: 0.5rem 0; }
+.stars button { width: 48px; height: 48px; font-size: 1.6rem; border: 0; background: none; color: #c9c9c0; cursor: pointer; }
+.stars button[aria-pressed=true] { color: var(--orange); }
+.gl { display: flex; gap: 0.8rem; align-items: center; min-height: 48px; border-bottom: 1px solid #eef1e8; cursor: pointer; }
+.gl input { width: 24px; height: 24px; accent-color: var(--coral); }
+.faq details { margin-bottom: 0.5rem; }
+@media (max-width: 900px) {
+  .dbody { grid-template-columns: minmax(0, 1fr); }
+  .dmenu { display: inline-flex; align-items: center; }
+  #side { position: fixed; left: 0; top: 64px; z-index: 55; width: 260px; transform: translateX(-100%); transition: transform 0.3s; }
+  #side.open { transform: none; box-shadow: var(--sh); }
+  .mail { grid-template-columns: 1fr; }
+}

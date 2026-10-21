@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | Senior Care Services</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;700;800&display=swap"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body>
+    <!-- Navbar: built by js/main.js -->
+    <header id="site-nav"></header>
+    <!-- Page content -->
+    <main class="wrap">
+      <!-- ===== Section: Let’s talk about the care your family needs ===== -->
+      <section class="phero pv-contact">
+        <div class="ptxt">
+          <p class="eyebrow">We are here to help</p>
+          <h1 data-split>Let’s talk about the care your family needs</h1>
+          <p class="lead">
+            Tell us about your situation. A real person replies within one working day.
+          </p>
+          <div class="btns"></div>
+        </div>
+        <div class="pvis">
+          <div class="ring" aria-hidden="true"></div>
+          <div class="pinfo card">
+            <b>Call</b>
+            +1 (555) 010-0199
+          </div>
+          <div class="pinfo card">
+            <b>Email</b>
+            hello@seniorcare.example
+          </div>
+          <div class="pinfo card">
+            <b>Hours</b>
+            Daily, 8am to 8pm
+          </div>
+        </div>
+      </section>
+      <!-- ===== Section: split ===== -->
+      <section class="split" style="align-items: start">
+        <form
+          class="card"
+          data-validate
+          data-ok="Thank you. This is a frontend demo, so your message was not sent."
+          novalidate
+        >
+          <div class="row2">
+            <div class="field">
+              <label for="fn">First name</label>
+              <input
+                id="fn"
+                name="fn"
+                data-v="name"
+                data-label="First name"
+                autocomplete="given-name"
+              />
+              <p class="err" id="fn-err" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="ln">Last name</label>
+              <input
+                id="ln"
+                name="ln"
+                data-v="name"
+                data-label="Last name"
+                autocomplete="family-name"
+              />
+              <p class="err" id="ln-err" role="alert"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="em">Email</label>
+            <input id="em" name="em" type="email" required data-v="email" autocomplete="email" />
+            <p class="err" id="em-err" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="msg">How can we help?</label>
+            <textarea id="msg" name="msg" rows="5" data-v="message" data-label="Message"></textarea>
+            <p class="err" id="msg-err" role="alert"></p>
+          </div>
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="form-ok" role="status" hidden></p>
+        </form>
+        <div>
+          <div class="ph mask" style="aspect-ratio: 5/4; border-radius: var(--r)">
+            <img
+              src="https://images.unsplash.com/photo-1761839257647-df30867afd54?fm=webp&fit=crop&w=500&q=45"
+              alt="A smiling older couple sitting together outdoors"
+              loading="lazy"
+              data-fallback="assets/images/contact.webp"
+            />
+          </div>
+          <address style="font-style: normal; margin-top: 1.5rem; display: grid; gap: 0.4rem">
+            <strong>Call</strong>
+            +1 (555) 010-0199
+            <strong>Email</strong>
+            hello@seniorcare.example
+            <strong>Hours</strong>
+            Daily, 8am to 8pm
+          </address>
+        </div>
+      </section>
+      <!-- ===== Section: Find us ===== -->
+      <section>
+        <h2 class="reveal">Find us</h2>
+        <div class="map-grid">
+          <div class="mapframe reveal" data-query="Stackly">
+            <iframe
+              title="Map showing the Stackly office location"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="card reveal">
+            <h3>Visit Stackly</h3>
+            <p>Drop in or book a visit first. We are happy to show you around.</p>
+            <p>
+              <strong>Hours</strong>
+              <br />
+              Daily, 8am to 8pm
+            </p>
+            <a class="btn btn-primary map-link" target="_blank" rel="noopener" href="#">
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Section: What happens next ===== -->
+      <section>
+        <h2 class="reveal">What happens next</h2>
+        <div class="stepper">
+          <div class="stp reveal">
+            <b>1</b>
+            <h3>We reply</h3>
+            <p>A real person gets back to you within one working day.</p>
+          </div>
+          <div class="stp reveal">
+            <b>2</b>
+            <h3>We visit</h3>
+            <p>A relaxed, no-obligation chat at your home.</p>
+          </div>
+          <div class="stp reveal">
+            <b>3</b>
+            <h3>We plan</h3>
+            <p>A nurse writes a plan, and care starts when you are ready.</p>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Section: What a home visit feels like ===== -->
+      <section>
+        <h2 class="reveal">What a home visit feels like</h2>
+        <div class="visit">
+          <div class="big mask">
+            <img
+              src="https://images.unsplash.com/photo-1559234938-b60fff04894d?fm=webp&fit=crop&w=400&q=35"
+              alt="An older couple walking together on a quiet road"
+              loading="lazy"
+              data-fallback="assets/images/service-mobility.webp"
+            />
+          </div>
+          <div class="tilec t-a reveal">
+            <h3>A relaxed chat</h3>
+            <p>No sales pitch. We listen and learn.</p>
+          </div>
+          <div class="tilec t-b reveal">
+            <h3>Bring questions</h3>
+            <p>Ask about routines, training or costs.</p>
+          </div>
+          <div class="tilec t-c reveal">
+            <h3>A written plan</h3>
+            <p>You receive our suggestions in writing.</p>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Section: Common questions ===== -->
+      <section class="faq">
+        <h2 class="reveal">Common questions</h2>
+        <details class="reveal">
+          <summary>How fast will you reply?</summary>
+          <p>Within one working day, often sooner.</p>
+        </details>
+        <details class="reveal">
+          <summary>Is the first visit really free?</summary>
+          <p>Yes. There is no cost or obligation.</p>
+        </details>
+        <details class="reveal">
+          <summary>Can I talk to someone by phone?</summary>
+          <p>Yes. Call us any day between 8am and 8pm.</p>
+        </details>
+        <details class="reveal">
+          <summary>Do you work weekends?</summary>
+          <p>Yes. Care is available seven days a week.</p>
+        </details>
+      </section>
+      <!-- ===== Section: Need help today? ===== -->
+      <section>
+        <div class="urgent reveal">
+          <div>
+            <h3>Need help today?</h3>
+            <p>Call us. We answer every day from 8am to 8pm.</p>
+          </div>
+          <a class="btn" href="tel:+15550100199">Call +1 (555) 010-0199</a>
+        </div>
+      </section>
+    </main>
+    <!-- Footer: built by js/main.js -->
+    <footer id="site-foot"></footer>
+
+    <!-- Scripts: libraries first, then site code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/validation.js"></script>
+  </body>
+</html>
